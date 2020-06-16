@@ -4,13 +4,19 @@ import {Provider} from 'react-redux'
 
 import Todo from './pages/Todo'
 
+import store from './redux/store'
+
 export default class App extends Component {
   render() {
     return (
   
+        <Provider store={store}>
         <Router>
+        <Switch>
           <Route path='/' exact component={Todo}/>
+          </Switch>
         </Router>
+        </Provider>
     
     )
   }
